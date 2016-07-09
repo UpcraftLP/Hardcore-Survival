@@ -3,6 +3,7 @@ package mod.upcraftlp.betterleaves.proxy;
 import mod.upcraftlp.betterleaves.init.LeafConfig;
 import mod.upcraftlp.betterleaves.init.LeafCrafting;
 import mod.upcraftlp.betterleaves.init.LeafItems;
+import mod.upcraftlp.betterleaves.util.FuelHandler;
 import mod.upcraftlp.betterleaves.util.LeafEvents;
 import mod.upcraftlp.betterleaves.util.ModUpdate;
 import mod.upcraftlp.betterleaves.util.UpdateEvent;
@@ -10,6 +11,7 @@ import mod.upcraftlp.betterleaves.util.WoodEvents;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
 
@@ -27,6 +29,7 @@ public class CommonProxy {
 		UpdateEvent.init();
 		LeafCrafting.init();
 		LeafCrafting.registerOres();
+		GameRegistry.registerFuelHandler(new FuelHandler());
 	}
 	
 	public void postInit(FMLPostInitializationEvent event)

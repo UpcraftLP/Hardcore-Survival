@@ -30,11 +30,10 @@ private boolean hasShownUpdate = false;
 			
 			ClickEvent versionCheckChatClickEvent = new ClickEvent(ClickEvent.Action.OPEN_URL, 
 		              Reference.UPDATE_URL);
-		        Minecraft.getMinecraft().thePlayer.addChatMessage(new TextComponentString("Downlaod version " + ChatFormatting.DARK_AQUA + ModUpdate.latestVersion + ChatFormatting.RESET + " from " + ChatFormatting.BLUE + "here" + ChatFormatting.RESET + ".").setStyle(new Style().setClickEvent(versionCheckChatClickEvent)));
+		        Minecraft.getMinecraft().thePlayer.addChatMessage(new TextComponentString("Downlaod version " + ChatFormatting.DARK_AQUA + ModUpdate.getLatest() + ChatFormatting.RESET + " from " + ChatFormatting.BLUE + "here" + ChatFormatting.RESET + ".").setStyle(new Style().setClickEvent(versionCheckChatClickEvent)));
 			
 			
 			hasShownUpdate = true;
 		}
 	}
-	
 }

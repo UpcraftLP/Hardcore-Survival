@@ -11,11 +11,12 @@ public class ModUpdate {
 
 	private static String UPDATE_URL = Reference.INTERNAL_UPDATE_URL;
 	private static boolean newVersionAvailable = false;
-	public static String latestVersion = Reference.VERSION; 
+	private static String latest = Reference.VERSION;
 	
 	public static void init()
 	{
 		if(!LeafConfig.enableUpdateChecker) return;
+		SysUtils.println("checking for updates...");
 		new Thread("Update-Checker" + Reference.MOD_ID)
 		{
 			public void run()
@@ -23,19 +24,25 @@ public class ModUpdate {
 				try {
 					URL url = new URL(UPDATE_URL);
 					Scanner scanner = new Scanner(url.openStream());
-					latestVersion = scanner.nextLine();
-					scanner.close();
-					
-					if (!Reference.VERSION.equals(latestVersion))
+					while(scanner.hasNextLine())
 					{
-						setNewVersionAvailable();
+						String contentString = scanner.nextLine();
+								String[] content = contentString.split("-");
+						SysUtils.println(content[0] + ", " + content[1]);
+						if(content[0].equals(Reference.MCVERSION))
+						{
+							latest = content[1];
+							break;
+						}
 					}
+					scanner.close();
 				} catch (MalformedURLException e)
 			{
-				System.err.println("URL ERROR: MALFORMED URL");
+				SysUtils.println("URL ERROR: MALFORMED URL");
 			} catch (Exception e) {
 					e.printStackTrace();
 				}
+				if(latest != Reference.VERSION) setNewVersionAvailable();
 			};
 		}.start();
 	}
@@ -43,12 +50,16 @@ public class ModUpdate {
 	private static synchronized void setNewVersionAvailable()
 	{
 		newVersionAvailable = true;
-		SysUtils.println("New Version available: " + latestVersion);
+		SysUtils.println("New Version available: " + latest);
 		SysUtils.println("download it here: " + Reference.UPDATE_URL);
 	}
 	
 	public static synchronized boolean isNewVersionAvailable()
 	{
 		return newVersionAvailable;
+	}
+	
+	 public static synchronized String getLatest() {
+		return latest;
 	}
 }

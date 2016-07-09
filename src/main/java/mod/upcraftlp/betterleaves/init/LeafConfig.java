@@ -15,6 +15,8 @@ public class LeafConfig {
 	public static boolean enableBranches;
 	public static boolean woodRequiresAxe;
 	public static boolean enableUpdateChecker;
+	public static boolean extraDrops;
+	public static int extraChance;
 	
 	public static void init(FMLPreInitializationEvent event)
 	{
@@ -24,14 +26,15 @@ public class LeafConfig {
 		//General
 		stickChance = config.getInt("stickDrops", Configuration.CATEGORY_GENERAL, 5, 1, 16384, "Chance to drop sticks, chance is 1/n leaf blocks");
 		saplingChance = config.getInt("saplingDrops", Configuration.CATEGORY_GENERAL, 7, 1, 16384, "Chance to drop saplings, chance is 1/n leaf blocks");
+		extraChance = config.getInt("extraDropChance", Configuration.CATEGORY_GENERAL, 5, 1, 16384, "chance to get extra drops, chance is 1/n leaf blocks");
 		enableUpdateChecker = config.getBoolean("enableUpdateChecker", Configuration.CATEGORY_GENERAL, true, "false to disable mod update checker");
 		
 		//Game Tweaks
-		config.addCustomCategoryComment(CATEGORY_GAME_TWEAKS, "Tweaks for hardcore gamers");
-		disableWoodenTools = config.getBoolean("disableWoodenTools", LeafConfig.CATEGORY_GAME_TWEAKS, false, "disable crafting of vanilla wooden tools");
-		enableFlintTools = config.getBoolean("enableFintTools", LeafConfig.CATEGORY_GAME_TWEAKS, false, "enable mod flint tools, same stats as wooden tools");
-		enableBranches = config.getBoolean("enableBranches", LeafConfig.CATEGORY_GAME_TWEAKS, false, "add branches to drop from leaves instead of sticks (they just can be used as sticks)");
-		woodRequiresAxe = config.getBoolean("woodRequiresAxe", LeafConfig.CATEGORY_GAME_TWEAKS, false, "make wood blocks require an Axe");
+		disableWoodenTools = config.getBoolean("disableWoodenTools", LeafConfig.CATEGORY_GAME_TWEAKS, true, "disable crafting of vanilla wooden tools");
+		enableFlintTools = config.getBoolean("enableFintTools", LeafConfig.CATEGORY_GAME_TWEAKS, true, "enable mod flint tools, same stats as wooden tools");
+		enableBranches = config.getBoolean("enableBranches", LeafConfig.CATEGORY_GAME_TWEAKS, true, "add branches to drop from leaves instead of sticks (they just can be used as sticks)");
+		woodRequiresAxe = config.getBoolean("woodRequiresAxe", LeafConfig.CATEGORY_GAME_TWEAKS, true, "make wood blocks require an Axe");
+		extraDrops = config.getBoolean("enableExtraDrops", LeafConfig.CATEGORY_GAME_TWEAKS, true, "enable/disable extra drops (acorns, pine cones, cocoa beans, etc.) from leaves");
 		config.setCategoryRequiresMcRestart(CATEGORY_GAME_TWEAKS, true);
 		config.save();
 	}

@@ -30,6 +30,11 @@ public class LeafCrafting {
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(LeafItems.FLINT_SHOVEL, 1), "F", "S", "S", 'F', Items.FLINT, 'S', "stick"));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(LeafItems.FLINT_SWORD, 1), "F", "F", "S", 'F', Items.FLINT, 'S', "stick"));
 		}
+		
+		if(LeafConfig.extraDrops)
+		{
+			GameRegistry.addSmelting(new ItemStack(LeafItems.PINE_CONE,  1, 0), new ItemStack(LeafItems.PINE_CONE, 1, 1), 0.2f);
+		}
 	}
 	
 	public static void disableWoodTools()
@@ -47,12 +52,13 @@ public class LeafCrafting {
 					if(isRecipe(result, Items.WOODEN_AXE) || isRecipe(result, Items.WOODEN_HOE) || isRecipe(result, Items.WOODEN_PICKAXE) || isRecipe(result, Items.WOODEN_SHOVEL) || isRecipe(result, Items.WOODEN_SWORD)) {
 						
 						removed++;
-						SysUtils.println("Removed recipe for " + result.getDisplayName() + ", removed " + removed + " recipes in total.");
+						SysUtils.println("Removed recipe for " + result.getDisplayName());
 						recipes.remove();
 						
 					}
 				}			
 			}
+			 SysUtils.println("Removed " + removed + " recipes in total.");
 		}
 		
 	}
