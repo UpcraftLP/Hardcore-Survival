@@ -20,12 +20,12 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "1.10-1.4.0"
-group= "mod.upcraftlp.betterleaves" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "betterleaves"
+version = "1.10-1.4.1"
+group= "mod.upcraftlp.hardcoresurvival" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "hardcoresurvival"
 
 minecraft {
-    version = "1.10.2-12.18.0.2008"
+    version = "1.10.2-12.18.1.2014"
     if(file('../run').exists()) {
 		runDir = "../run"
 	}
