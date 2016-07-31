@@ -41,7 +41,7 @@ public class Main {
 			data.authorList.add("UpcraftLP");
 			data.modId = Reference.MOD_ID;
 			data.version = Reference.VERSION;
-			data.description = Reference.NAME + " by " + data.credits;
+			data.description = Reference.NAME + " " + Reference.MCVERSION + " by " + data.credits;
 			//TODO (maybe)
 			//data.logoFile = "assets/" + Reference.MOD_ID + "/textures/gui/logo.png";
 		}

@@ -43,7 +43,7 @@ public class ModUpdate {
 			} catch (Exception e) {
 					e.printStackTrace();
 				}
-				if(latest != Reference.VERSION) setNewVersionAvailable();
+				if(!latest.equals(Reference.VERSION)) setNewVersionAvailable();
 			};
 		}.start();
 	}
