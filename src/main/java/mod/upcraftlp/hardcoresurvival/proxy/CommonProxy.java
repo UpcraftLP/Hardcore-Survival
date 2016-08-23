@@ -1,8 +1,10 @@
 package mod.upcraftlp.hardcoresurvival.proxy;
 
-import mod.upcraftlp.hardcoresurvival.init.LeafConfig;
-import mod.upcraftlp.hardcoresurvival.init.LeafCrafting;
-import mod.upcraftlp.hardcoresurvival.init.LeafItems;
+import mod.upcraftlp.hardcoresurvival.init.HardCoreMisc;
+import mod.upcraftlp.hardcoresurvival.init.HardcoreBlocks;
+import mod.upcraftlp.hardcoresurvival.init.HardcoreConfig;
+import mod.upcraftlp.hardcoresurvival.init.HardcoreCrafting;
+import mod.upcraftlp.hardcoresurvival.init.HardcoreItems;
 import mod.upcraftlp.hardcoresurvival.util.FuelHandler;
 import mod.upcraftlp.hardcoresurvival.util.LeafEvents;
 import mod.upcraftlp.hardcoresurvival.util.ModUpdate;
@@ -17,9 +19,11 @@ public class CommonProxy {
 
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		LeafConfig.init(event);
+		HardcoreConfig.init(event);
 		ModUpdate.init();
-		LeafItems.init();
+		HardcoreBlocks.init();
+		HardcoreItems.init();
+		HardCoreMisc.init();
 	}
 	
 	public void init(FMLInitializationEvent event)
@@ -27,13 +31,13 @@ public class CommonProxy {
 		LeafEvents.init();
 		WoodEvents.init();
 		UpdateEvent.init();
-		LeafCrafting.init();
-		LeafCrafting.registerOres();
+		HardcoreCrafting.init();
+		HardcoreCrafting.registerOres();
 		GameRegistry.registerFuelHandler(new FuelHandler());
 	}
 	
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		LeafCrafting.disableWoodTools();
+		HardcoreCrafting.disableWoodTools();
 	}
 }

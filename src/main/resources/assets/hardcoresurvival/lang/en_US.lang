@@ -6,4 +6,6 @@ item.flint_sword.name=Flint Sword
 item.branch.name=Branch
 item.acorn.name=Acorn
 item.pine_cone.name=Pine Cone
-item.pine_cone.cooked.name=Cooked Pine Cone
+item.pine_cone.cooked.name=Roasted Pine Cone
+
+tile.quicksand.name=Quicksand

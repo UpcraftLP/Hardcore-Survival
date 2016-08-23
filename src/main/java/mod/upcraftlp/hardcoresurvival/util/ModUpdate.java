@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 import mod.upcraftlp.hardcoresurvival.Reference;
-import mod.upcraftlp.hardcoresurvival.init.LeafConfig;
+import mod.upcraftlp.hardcoresurvival.init.HardcoreConfig;
 
 
 public class ModUpdate {
@@ -16,7 +16,7 @@ public class ModUpdate {
 	
 	public static void init()
 	{
-		if(!LeafConfig.enableUpdateChecker) return;
+		if(!HardcoreConfig.enableUpdateChecker) return;
 		SysUtils.println("checking for updates...");
 		new Thread("Update-Checker" + Reference.MOD_ID)
 		{

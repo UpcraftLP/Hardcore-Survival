@@ -17,6 +17,7 @@ import net.minecraft.item.ItemTool;
 public class ItemFlintAxe extends ItemTool {
 
 	private static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(new Block[] {Blocks.PLANKS, Blocks.BOOKSHELF, Blocks.LOG, Blocks.LOG2, Blocks.CHEST, Blocks.PUMPKIN, Blocks.LIT_PUMPKIN, Blocks.MELON_BLOCK, Blocks.LADDER, Blocks.WOODEN_BUTTON, Blocks.WOODEN_PRESSURE_PLATE});
+	private final Set<String> TOOL_CLASSES = Sets.newHashSet(new String[] {"axe"});
 	
 	public ItemFlintAxe() {
 		super(ToolMaterial.WOOD, EFFECTIVE_ON);
@@ -33,6 +34,11 @@ public class ItemFlintAxe extends ItemTool {
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List<String> tooltip, boolean p_77624_4_) {
 		tooltip.add("Survivalist's Axe!");
 		super.addInformation(itemStack, player, tooltip, p_77624_4_);
+	}
+	
+	@Override
+	public Set<String> getToolClasses(ItemStack stack) {
+		return this.TOOL_CLASSES;
 	}
 	
 	public float getStrVsBlock(ItemStack stack, IBlockState state)

@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class LeafItems {
+public class HardcoreItems {
 
 	public static Item FLINT_AXE = new ItemFlintAxe();
 	public static Item FLINT_HOE = new ItemFlintHoe();
@@ -28,7 +28,7 @@ public class LeafItems {
 	
 	public static void init()
 	{
-		if(LeafConfig.enableFlintTools)
+		if(HardcoreConfig.enableFlintTools)
 		{
 			register(FLINT_AXE);
 			register(FLINT_HOE);
@@ -37,13 +37,13 @@ public class LeafItems {
 			register(FLINT_SWORD);
 		}
 		
-		if(LeafConfig.extraDrops)
+		if(HardcoreConfig.extraDrops)
 		{
 			register(ACORN);
 			register(PINE_CONE);
 		}
 		
-		if(LeafConfig.enableBranches) register(BRANCH);
+		if(HardcoreConfig.enableBranches) register(BRANCH);
 	}
 	
 	public static void register(Item item)
@@ -65,9 +65,9 @@ public class LeafItems {
 	
 	@SideOnly(Side.CLIENT)
 	public static void registerRenders() {
-		if(LeafConfig.enableBranches) registerRender(BRANCH);
+		if(HardcoreConfig.enableBranches) registerRender(BRANCH);
 		
-		if(LeafConfig.enableFlintTools)
+		if(HardcoreConfig.enableFlintTools)
 		{
 			registerRender(FLINT_AXE);
 			registerRender(FLINT_HOE);
@@ -76,10 +76,9 @@ public class LeafItems {
 			registerRender(FLINT_SWORD);
 		}
 		
-		if(LeafConfig.extraDrops)
+		if(HardcoreConfig.extraDrops)
 		{
 			registerRender(ACORN);
-			//System.out.println(PINE_CONE.toString());
 			registerRenderWithMeta(PINE_CONE, 0);
 			registerRenderWithMeta(PINE_CONE, 1);
 		}

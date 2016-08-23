@@ -3,7 +3,7 @@ package mod.upcraftlp.hardcoresurvival.util;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
 import mod.upcraftlp.hardcoresurvival.Reference;
-import mod.upcraftlp.hardcoresurvival.init.LeafConfig;
+import mod.upcraftlp.hardcoresurvival.init.HardcoreConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentString;
@@ -16,7 +16,7 @@ public class UpdateEvent {
 
 	public static void init()
 	{
-		if(LeafConfig.enableUpdateChecker) MinecraftForge.EVENT_BUS.register(new UpdateEvent());
+		if(HardcoreConfig.enableUpdateChecker) MinecraftForge.EVENT_BUS.register(new UpdateEvent());
 	}
 	
 private boolean hasShownUpdate = false;

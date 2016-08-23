@@ -1,6 +1,7 @@
 package mod.upcraftlp.hardcoresurvival.proxy;
 
-import mod.upcraftlp.hardcoresurvival.init.LeafItems;
+import mod.upcraftlp.hardcoresurvival.init.HardcoreBlocks;
+import mod.upcraftlp.hardcoresurvival.init.HardcoreItems;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -10,7 +11,8 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
-		LeafItems.registerRenders();
+		HardcoreItems.registerRenders();
+		HardcoreBlocks.registerRenders();
 	}
 	
 	@Override

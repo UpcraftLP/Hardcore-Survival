@@ -1,6 +1,6 @@
 package mod.upcraftlp.hardcoresurvival.util;
 
-import mod.upcraftlp.hardcoresurvival.init.LeafConfig;
+import mod.upcraftlp.hardcoresurvival.init.HardcoreConfig;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemTool;
@@ -31,9 +31,11 @@ public class WoodEvents {
 			}
 			else
 			{
+				event.getDrops().clear();
 				event.setCanceled(true);
 			}
 		}
+		event.getDrops().clear();
 		event.setCanceled(true);
 	}
 	
@@ -64,6 +66,6 @@ public class WoodEvents {
 	}
 
 	public static void init() {
-		if(LeafConfig.woodRequiresAxe) MinecraftForge.EVENT_BUS.register(new WoodEvents());
+		if(HardcoreConfig.woodRequiresAxe) MinecraftForge.EVENT_BUS.register(new WoodEvents());
 	}
 }

@@ -6,8 +6,8 @@ import javax.annotation.Nullable;
 
 import com.google.common.base.Predicate;
 
-import mod.upcraftlp.hardcoresurvival.init.LeafConfig;
-import mod.upcraftlp.hardcoresurvival.init.LeafItems;
+import mod.upcraftlp.hardcoresurvival.init.HardcoreConfig;
+import mod.upcraftlp.hardcoresurvival.init.HardcoreItems;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockNewLeaf;
 import net.minecraft.block.BlockOldLeaf;
@@ -50,11 +50,11 @@ public class LeafEvents {
 	public static void init()
 	{
 		MinecraftForge.EVENT_BUS.register(new LeafEvents());
-		stickChance = LeafConfig.stickChance;
-		saplingChance = LeafConfig.saplingChance;
-		branches = LeafConfig.enableBranches;
-		extraDrops = LeafConfig.extraDrops;
-		extraChance = LeafConfig.extraChance;
+		stickChance = HardcoreConfig.stickChance;
+		saplingChance = HardcoreConfig.saplingChance;
+		branches = HardcoreConfig.enableBranches;
+		extraDrops = HardcoreConfig.extraDrops;
+		extraChance = HardcoreConfig.extraChance;
 	}
 	
 	@SubscribeEvent
@@ -85,7 +85,7 @@ public class LeafEvents {
 		event.getDrops().clear();
 		if(branches)
 		{
-			if(random.nextInt(stickChance) == 0) event.getDrops().add(new ItemStack(LeafItems.BRANCH, 1));
+			if(random.nextInt(stickChance) == 0) event.getDrops().add(new ItemStack(HardcoreItems.BRANCH, 1));
 		}
 		else
 		{
@@ -113,11 +113,11 @@ public class LeafEvents {
 				switch((BlockPlanks.EnumType) event.getState().getValue(VARIANT))
 				{
 				case OAK:
-					if(random.nextInt(extraChance) == 0) event.getDrops().add(new ItemStack(LeafItems.ACORN, 1));
+					if(random.nextInt(extraChance) == 0) event.getDrops().add(new ItemStack(HardcoreItems.ACORN, 1));
 					break;
 					
 				case SPRUCE:
-					if(random.nextInt(extraChance) == 0) event.getDrops().add(new ItemStack(LeafItems.PINE_CONE, 1, 0));
+					if(random.nextInt(extraChance) == 0) event.getDrops().add(new ItemStack(HardcoreItems.PINE_CONE, 1, 0));
 					break;
 					
 				case BIRCH:
