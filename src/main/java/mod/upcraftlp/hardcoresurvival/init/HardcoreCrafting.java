@@ -30,7 +30,7 @@ public class HardcoreCrafting {
 	{
 		if(HardcoreConfig.enableFlintTools)
 		{
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(HardcoreItems.FLINT_AXE, 1), "FF ", "FS ", " S ", 'F', Items.FLINT, 'S', "stick").setMirrored(true));
+			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(HardcoreItems.FLINT_AXE, 1), "FS", " S", 'F', Items.FLINT, 'S', "stick").setMirrored(true));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(HardcoreItems.FLINT_HOE, 1), "FF", " S", " S", 'F', Items.FLINT, 'S', "stick").setMirrored(true));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(HardcoreItems.FLINT_PICKAXE, 1), "FFF", " S ", " S ", 'F', Items.FLINT, 'S', "stick"));
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(HardcoreItems.FLINT_SHOVEL, 1), "F", "S", "S", 'F', Items.FLINT, 'S', "stick"));
