@@ -2,20 +2,16 @@ package mod.upcraftlp.hardcoresurvival.items;
 
 import java.util.List;
 
+import mod.upcraftlp.hardcoresurvival.util.templates.BasicFood;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 
-public class ItemPineCone extends ItemFood {
+public class ItemPineCone extends BasicFood {
 
-	private String name = "pine_cone";
-	
 	public ItemPineCone() {
-		super(3, 0.3f, false);
-		this.setUnlocalizedName(name);
-		this.setRegistryName(name);
+		super("pine_cone", 3, 0.3f, false);
 		this.setHasSubtypes(true);
 		this.setMaxDamage(0);
 	}

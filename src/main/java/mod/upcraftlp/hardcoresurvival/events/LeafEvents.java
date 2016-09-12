@@ -1,4 +1,4 @@
-package mod.upcraftlp.hardcoresurvival.util;
+package mod.upcraftlp.hardcoresurvival.events;
 
 import java.util.Random;
 
@@ -6,7 +6,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.base.Predicate;
 
-import mod.upcraftlp.hardcoresurvival.init.HardcoreConfig;
+import mod.upcraftlp.hardcoresurvival.init.ModConfig;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreItems;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockNewLeaf;
@@ -50,11 +50,11 @@ public class LeafEvents {
 	public static void init()
 	{
 		MinecraftForge.EVENT_BUS.register(new LeafEvents());
-		stickChance = HardcoreConfig.stickChance;
-		saplingChance = HardcoreConfig.saplingChance;
-		branches = HardcoreConfig.enableBranches;
-		extraDrops = HardcoreConfig.extraDrops;
-		extraChance = HardcoreConfig.extraChance;
+		stickChance = ModConfig.stickChance;
+		saplingChance = ModConfig.saplingChance;
+		branches = ModConfig.enableBranches;
+		extraDrops = ModConfig.extraDrops;
+		extraChance = ModConfig.extraChance;
 	}
 	
 	@SubscribeEvent

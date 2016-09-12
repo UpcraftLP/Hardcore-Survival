@@ -17,6 +17,7 @@ public class HardcoreWorldGenerator implements IWorldGenerator {
 		int blockZ = chunkZ * 16;
 		switch(world.provider.getDimension()) {
 		case -1:
+			generateNether(world, random, blockX, blockZ);
 			break;
 		
 		case 0:
@@ -24,6 +25,7 @@ public class HardcoreWorldGenerator implements IWorldGenerator {
 			break;
 		
 		case 1:
+			generatEnd(world, random, blockX, blockZ);
 			break;
 		
 		default:
@@ -42,5 +44,26 @@ public class HardcoreWorldGenerator implements IWorldGenerator {
 		}
 		
 	}
-
+	
+	private void generateNether(World world, Random random, int blockX, int blockZ) {
+		if(WorldGenRegistry.getGeneratorsOverworld() != null) {
+			Iterator<IWorldChunkGenerator> i = WorldGenRegistry.getGeneratorsNether().iterator();
+			while(i.hasNext()) {
+				IWorldChunkGenerator chunkGenerator = i.next();
+				chunkGenerator.generate(world, random, blockX, blockZ);
+			}
+		}
+		
+	}
+	
+	private void generatEnd(World world, Random random, int blockX, int blockZ) {
+		if(WorldGenRegistry.getGeneratorsOverworld() != null) {
+			Iterator<IWorldChunkGenerator> i = WorldGenRegistry.getGeneratorsEnd().iterator();
+			while(i.hasNext()) {
+				IWorldChunkGenerator chunkGenerator = i.next();
+				chunkGenerator.generate(world, random, blockX, blockZ);
+			}
+		}
+		
+	}
 }

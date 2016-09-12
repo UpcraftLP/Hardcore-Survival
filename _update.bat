@@ -1,2 +1,2 @@
 @echo off
-gradlew setupDecompWorkspace --refresh-dependencies
+gradlew setupDecompWorkspace --refresh-dependencies && gradlew eclipse

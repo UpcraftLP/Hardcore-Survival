@@ -11,7 +11,7 @@ public class HardcoreBlocks {
 	public static Block QUICKSAND = new BlockQuicksand();
 	
 	public static void init() {
-		if(HardcoreConfig.enableQuicksand) register(QUICKSAND);
+		if(ModConfig.enableQuicksand) register(QUICKSAND);
 	}
 	
 	/**
@@ -35,7 +35,7 @@ public class HardcoreBlocks {
 	}
 	
 	public static void registerRenders() {
-		if(HardcoreConfig.enableQuicksand) registerBlockRender(QUICKSAND);
+		if(ModConfig.enableQuicksand) registerBlockRender(QUICKSAND);
 	}
 	
 	public static void registerBlockRender(Block block) {

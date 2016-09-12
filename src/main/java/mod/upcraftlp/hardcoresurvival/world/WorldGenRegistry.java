@@ -3,6 +3,8 @@ package mod.upcraftlp.hardcoresurvival.world;
 import java.util.ArrayList;
 import java.util.List;
 
+import mod.upcraftlp.hardcoresurvival.init.ModConfig;
+
 public class WorldGenRegistry {
 
 	private static List<IWorldChunkGenerator> overworld = new ArrayList<IWorldChunkGenerator>();
@@ -10,7 +12,7 @@ public class WorldGenRegistry {
 	private static List<IWorldChunkGenerator> sky = new ArrayList<IWorldChunkGenerator>();
 	
 	public static void init() {
-		overworld.add(new ChunkGenQuicksand());
+		if(ModConfig.sand_pits) overworld.add(new ChunkGenQuicksand());
 	}
 	
 	public static List<IWorldChunkGenerator> getGeneratorsOverworld() {

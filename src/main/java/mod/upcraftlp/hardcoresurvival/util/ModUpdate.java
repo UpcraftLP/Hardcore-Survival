@@ -5,20 +5,21 @@ import java.net.URL;
 import java.util.Scanner;
 
 import mod.upcraftlp.hardcoresurvival.Reference;
-import mod.upcraftlp.hardcoresurvival.init.HardcoreConfig;
+import mod.upcraftlp.hardcoresurvival.init.ModConfig;
 
 
 public class ModUpdate {
 
 	private static String UPDATE_URL = Reference.INTERNAL_UPDATE_URL;
 	private static boolean newVersionAvailable = false;
-	private static String latest = Reference.VERSION;
+	private static String version = Reference.VERSION.split("-")[0];
+	private static String latest = version;
 	
 	public static void init()
 	{
-		if(!HardcoreConfig.enableUpdateChecker) return;
-		SysUtils.println("checking for updates...");
-		new Thread("Update-Checker" + Reference.MOD_ID)
+		if(!ModConfig.enableUpdateChecker) return;
+		SysUtils.printFML("Initializing Update-Checker...");
+		new Thread("Update-Checker:" + Reference.MOD_ID)
 		{
 			public void run()
 			{
@@ -29,7 +30,6 @@ public class ModUpdate {
 					{
 						String contentString = scanner.nextLine();
 								String[] content = contentString.split("-");
-						SysUtils.println(content[0] + ", " + content[1]);
 						if(content[0].equals(Reference.MCVERSION))
 						{
 							latest = content[1];
@@ -39,11 +39,11 @@ public class ModUpdate {
 					scanner.close();
 				} catch (MalformedURLException e)
 			{
-				SysUtils.println("URL ERROR: MALFORMED URL");
+				SysUtils.printFML("URL ERROR: MALFORMED URL");
 			} catch (Exception e) {
 					e.printStackTrace();
 				}
-				if(!latest.equals(Reference.VERSION)) setNewVersionAvailable();
+				if(!latest.equals(version)) setNewVersionAvailable();
 			};
 		}.start();
 	}
@@ -51,8 +51,6 @@ public class ModUpdate {
 	private static synchronized void setNewVersionAvailable()
 	{
 		newVersionAvailable = true;
-		SysUtils.println("New Version available: " + latest);
-		SysUtils.println("download it here: " + Reference.UPDATE_URL);
 	}
 	
 	public static synchronized boolean isNewVersionAvailable()

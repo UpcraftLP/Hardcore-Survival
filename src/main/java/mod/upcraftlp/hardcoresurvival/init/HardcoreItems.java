@@ -28,7 +28,7 @@ public class HardcoreItems {
 	
 	public static void init()
 	{
-		if(HardcoreConfig.enableFlintTools)
+		if(ModConfig.enableFlintTools)
 		{
 			register(FLINT_AXE);
 			register(FLINT_HOE);
@@ -37,13 +37,13 @@ public class HardcoreItems {
 			register(FLINT_SWORD);
 		}
 		
-		if(HardcoreConfig.extraDrops)
+		if(ModConfig.extraDrops)
 		{
 			register(ACORN);
 			register(PINE_CONE);
 		}
 		
-		if(HardcoreConfig.enableBranches) register(BRANCH);
+		if(ModConfig.enableBranches) register(BRANCH);
 	}
 	
 	public static void register(Item item)
@@ -65,9 +65,9 @@ public class HardcoreItems {
 	
 	@SideOnly(Side.CLIENT)
 	public static void registerRenders() {
-		if(HardcoreConfig.enableBranches) registerRender(BRANCH);
+		if(ModConfig.enableBranches) registerRender(BRANCH);
 		
-		if(HardcoreConfig.enableFlintTools)
+		if(ModConfig.enableFlintTools)
 		{
 			registerRender(FLINT_AXE);
 			registerRender(FLINT_HOE);
@@ -76,7 +76,7 @@ public class HardcoreItems {
 			registerRender(FLINT_SWORD);
 		}
 		
-		if(HardcoreConfig.extraDrops)
+		if(ModConfig.extraDrops)
 		{
 			registerRender(ACORN);
 			registerRenderWithMeta(PINE_CONE, 0);
