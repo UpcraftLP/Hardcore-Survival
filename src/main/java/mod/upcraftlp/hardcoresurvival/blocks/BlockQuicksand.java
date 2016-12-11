@@ -12,6 +12,9 @@ public class BlockQuicksand extends BasicBlockFalling {
 
 	public BlockQuicksand() {
 		super("quicksand");
+		this.setHarvestLevel("shovel", 0);
+		this.setHardness(0.7f);
+		this.setResistance(1.5f);
 	}
 	
 	@Override
@@ -25,7 +28,7 @@ public class BlockQuicksand extends BasicBlockFalling {
 	}
 	
 	@Override
-	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, World worldIn, BlockPos pos) {
+	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
 		return NULL_AABB;
 	}
 	

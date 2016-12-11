@@ -6,8 +6,8 @@ import javax.annotation.Nullable;
 
 import com.google.common.base.Predicate;
 
-import mod.upcraftlp.hardcoresurvival.init.ModConfig;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreItems;
+import mod.upcraftlp.hardcoresurvival.init.ModConfig;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockNewLeaf;
 import net.minecraft.block.BlockOldLeaf;

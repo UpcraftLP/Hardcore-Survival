@@ -2,13 +2,14 @@ package mod.upcraftlp.hardcoresurvival.items;
 
 import java.util.List;
 
-import mod.upcraftlp.hardcoresurvival.util.templates.BasicFood;
+import core.upcraftlp.craftdev.API.templates.ItemFood;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
-public class ItemPineCone extends BasicFood {
+public class ItemPineCone extends ItemFood {
 
 	public ItemPineCone() {
 		super("pine_cone", 3, 0.3f, false);
@@ -34,7 +35,7 @@ public class ItemPineCone extends BasicFood {
 	}
 	
 	@Override
-	public void getSubItems(Item itemIn, CreativeTabs tab, List<ItemStack> subItems) {
+	public void getSubItems(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> subItems) {
 		subItems.add(new ItemStack(this, 1, 0));
 		subItems.add(new ItemStack(this, 1, 1));
 	}

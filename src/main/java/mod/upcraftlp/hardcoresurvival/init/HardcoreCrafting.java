@@ -2,7 +2,7 @@ package mod.upcraftlp.hardcoresurvival.init;
 
 import java.util.Iterator;
 
-import mod.upcraftlp.hardcoresurvival.util.SysUtils;
+import mod.upcraftlp.hardcoresurvival.Main;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -63,13 +63,13 @@ public class HardcoreCrafting {
 					if(isRecipe(result, Items.WOODEN_AXE) || isRecipe(result, Items.WOODEN_HOE) || isRecipe(result, Items.WOODEN_PICKAXE) || isRecipe(result, Items.WOODEN_SHOVEL) || isRecipe(result, Items.WOODEN_SWORD)) {
 						
 						removed++;
-						SysUtils.println("Removed recipe for " + result.getDisplayName());
+						Main.getLogger().println("Removed recipe for " + result.getDisplayName());
 						recipes.remove();
 						
 					}
 				}			
 			}
-			 SysUtils.println("Removed " + removed + " recipes in total.");
+			Main.getLogger().println("Removed " + removed + " recipes in total.");
 		}
 		
 	}

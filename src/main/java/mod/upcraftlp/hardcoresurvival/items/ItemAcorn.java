@@ -1,10 +1,10 @@
 package mod.upcraftlp.hardcoresurvival.items;
 
-import mod.upcraftlp.hardcoresurvival.util.templates.BasicFood;
+import core.upcraftlp.craftdev.API.templates.ItemFood;
 import net.minecraft.init.MobEffects;
 import net.minecraft.potion.PotionEffect;
 
-public class ItemAcorn extends BasicFood {
+public class ItemAcorn extends ItemFood {
 
 	public ItemAcorn() {
 		super("acorn", 1, 0.7f, false);

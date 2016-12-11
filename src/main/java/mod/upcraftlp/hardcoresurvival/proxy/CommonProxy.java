@@ -1,36 +1,41 @@
 package mod.upcraftlp.hardcoresurvival.proxy;
 
+import core.upcraftlp.craftdev.API.common.ModRegistry;
+import core.upcraftlp.craftdev.API.common.WorldHandler;
+import mod.upcraftlp.hardcoresurvival.events.FuelHandler;
 import mod.upcraftlp.hardcoresurvival.events.LeafEvents;
 import mod.upcraftlp.hardcoresurvival.events.WoodEvents;
-import mod.upcraftlp.hardcoresurvival.init.HardCoreMisc;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreBlocks;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreCrafting;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreItems;
-import mod.upcraftlp.hardcoresurvival.util.ModRegistry;
-import mod.upcraftlp.hardcoresurvival.util.UpdateEvent;
+import mod.upcraftlp.hardcoresurvival.init.ModConfig;
+import mod.upcraftlp.hardcoresurvival.world.ChunkGenQuicksand;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
 
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		ModRegistry.preInit(event);
+		ModConfig.init(event);
 		HardcoreBlocks.init();
 		HardcoreItems.init();
-		HardCoreMisc.init();
+		ModRegistry.registerItems(HardcoreItems.itemMap);
+		ModRegistry.registerBlocks(HardcoreBlocks.blockMap);
+		if(ModConfig.sand_pits) WorldHandler.registerChunkGenerator(new ChunkGenQuicksand(), 0);
 	}
 	
 	public void init(FMLInitializationEvent event)
 	{
 		LeafEvents.init();
 		WoodEvents.init();
-		UpdateEvent.init();
 		HardcoreCrafting.init();
 		HardcoreCrafting.registerOres();
-		ModRegistry.registerFuel(HardcoreItems.BRANCH, 120);
-		ModRegistry.registerFuel(HardcoreItems.PINE_CONE, 80);
+		GameRegistry.registerFuelHandler(new FuelHandler());
+		FuelHandler.registerFuel(HardcoreItems.BRANCH, 100);
+		FuelHandler.registerFuel(HardcoreItems.PINE_CONE, 80);
 	}
 	
 	public void postInit(FMLPostInitializationEvent event)

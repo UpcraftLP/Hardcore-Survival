@@ -2,25 +2,23 @@ package mod.upcraftlp.hardcoresurvival.items;
 
 import java.util.List;
 
-import com.google.common.collect.Sets;
-
-import mod.upcraftlp.hardcoresurvival.util.templates.BasicTool;
+import core.upcraftlp.craftdev.API.templates.ItemTool;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
-public class ItemFlintShovel extends BasicTool {
+public class ItemFlintShovel extends ItemTool {
 
 	public ItemFlintShovel() {
 		super("flint_shovel", 1.5f, -3.0f, ToolMaterial.WOOD);
 		this.setCreativeTab(CreativeTabs.TOOLS);
-		this.TOOL_CLASSES = Sets.newHashSet(new String[] {"shovel"});
+		this.setHarvestLevel("shovel", 0);
 	}
 	
 	@Override
-	public void addInformation(ItemStack itemStack, EntityPlayer player, List<String> tooltip, boolean p_77624_4_) {
+	public void addInformation(ItemStack itemStack, EntityPlayer player, List<String> tooltip, boolean advanced) {
 		tooltip.add("Survivalist's Shovel!");
-		super.addInformation(itemStack, player, tooltip, p_77624_4_);
+		super.addInformation(itemStack, player, tooltip, advanced);
 	}
 
 }
