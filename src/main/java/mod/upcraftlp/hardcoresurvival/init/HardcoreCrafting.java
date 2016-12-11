@@ -23,7 +23,6 @@ public class HardcoreCrafting {
 		OreDictionary.registerOre("blockSand", Blocks.SAND);
 		OreDictionary.registerOre("blockSand", new ItemStack(Blocks.SAND, 1, 1));
 		if(ModConfig.enableBranches) OreDictionary.registerOre("stick", HardcoreItems.BRANCH);
-		if(ModConfig.enableQuicksand) OreDictionary.registerOre("blockQuicksand", HardcoreBlocks.QUICKSAND);
 	}
 	
 	public static void init()
@@ -42,10 +41,6 @@ public class HardcoreCrafting {
 			GameRegistry.addSmelting(new ItemStack(HardcoreItems.PINE_CONE,  1, 0), new ItemStack(HardcoreItems.PINE_CONE, 1, 1), 0.2f);
 		}
 		
-		if(ModConfig.enableQuicksand)
-		{
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(HardcoreBlocks.QUICKSAND, 8), "SSS", "SWS", "SSS", 'S', "blockSand", 'W', "fluidWater"));
-		}
 	}
 	
 	public static void disableWoodTools()

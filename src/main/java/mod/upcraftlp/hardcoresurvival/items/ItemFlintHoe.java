@@ -21,6 +21,7 @@ public class ItemFlintHoe extends ItemHoe {
 		this.setUnlocalizedName("flint_hoe");
 		this.setRegistryName("flint_hoe");
 		this.setCreativeTab(CreativeTabs.TOOLS);
+		this.setHarvestLevel("hoe", 0);
 	}
 	
 	@Override

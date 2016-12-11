@@ -8,4 +8,5 @@ item.acorn.name=Acorn
 item.pine_cone.name=Pine Cone
 item.pine_cone.cooked.name=Roasted Pine Cone
 
-tile.quicksand.name=Quicksand
+#broken in 1.10, will be added in 1.11 again
+#tile.quicksand.name=Quicksand

@@ -2,8 +2,6 @@ package mod.upcraftlp.hardcoresurvival.proxy;
 
 import mod.upcraftlp.hardcoresurvival.events.LeafEvents;
 import mod.upcraftlp.hardcoresurvival.events.WoodEvents;
-import mod.upcraftlp.hardcoresurvival.init.HardCoreMisc;
-import mod.upcraftlp.hardcoresurvival.init.HardcoreBlocks;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreCrafting;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreItems;
 import mod.upcraftlp.hardcoresurvival.util.ModRegistry;
@@ -17,9 +15,7 @@ public class CommonProxy {
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		ModRegistry.preInit(event);
-		HardcoreBlocks.init();
 		HardcoreItems.init();
-		HardCoreMisc.init();
 	}
 	
 	public void init(FMLInitializationEvent event)

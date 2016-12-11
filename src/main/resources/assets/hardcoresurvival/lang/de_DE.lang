@@ -8,4 +8,5 @@ item.acorn.name=Eichel
 item.pine_cone.name=Pinienzapfen
 item.pine_cone.cooked.name=gekochter Pinienzapfen
 
-tile.quicksand.name=Treibsand
+#broken in 1.10, will be added in 1.11 again
+#tile.quicksand.name=Treibsand

@@ -17,6 +17,7 @@ public class ItemFlintAxe extends BasicTool {
 		super("flint_axe", 6.0f, -3.2f, ToolMaterial.WOOD);
 		this.setCreativeTab(CreativeTabs.TOOLS);
 		this.TOOL_CLASSES = Sets.newHashSet(new String[] {"axe"});
+		this.setHarvestLevel("axe", 0);
 	}
 	
 	@Override

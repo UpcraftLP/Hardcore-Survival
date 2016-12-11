@@ -1,6 +1,5 @@
 package mod.upcraftlp.hardcoresurvival.proxy;
 
-import mod.upcraftlp.hardcoresurvival.init.HardcoreBlocks;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreItems;
 import mod.upcraftlp.hardcoresurvival.util.ModRegistry;
 import net.minecraft.util.text.TextFormatting;
@@ -15,7 +14,6 @@ public class ClientProxy extends CommonProxy {
 		super.preInit(event);
 		ModRegistry.registerModMetaData(event, TextFormatting.AQUA);
 		HardcoreItems.registerRenders();
-		HardcoreBlocks.registerRenders();
 	}
 	
 	@Override

@@ -15,6 +15,7 @@ public class ItemFlintShovel extends BasicTool {
 		super("flint_shovel", 1.5f, -3.0f, ToolMaterial.WOOD);
 		this.setCreativeTab(CreativeTabs.TOOLS);
 		this.TOOL_CLASSES = Sets.newHashSet(new String[] {"shovel"});
+		this.setHarvestLevel("shovel", 0);
 	}
 	
 	@Override

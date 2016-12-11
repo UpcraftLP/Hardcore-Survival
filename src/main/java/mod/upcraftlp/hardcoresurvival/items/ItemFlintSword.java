@@ -20,6 +20,7 @@ public class ItemFlintSword extends ItemSword {
 		this.setUnlocalizedName("flint_sword");
 		this.setRegistryName("flint_sword");
 		this.setCreativeTab(CreativeTabs.COMBAT);
+		this.setHarvestLevel("sword", 0);
 	}
 	
 	@Override

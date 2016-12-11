@@ -15,6 +15,7 @@ public class ItemFlintPickaxe extends BasicTool {
 		super("flint_pickaxe", 1.0f, -2.8f, ToolMaterial.WOOD);
 		this.setCreativeTab(CreativeTabs.TOOLS);
 		this.TOOL_CLASSES = Sets.newHashSet(new String[] {"pickaxe"});
+		this.setHarvestLevel("pickaxe", 0);
 	}
 		
 	@Override

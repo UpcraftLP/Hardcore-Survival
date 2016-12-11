@@ -29,9 +29,9 @@ public class UpdateEvent {
 	{
 		if(ModUpdate.isNewVersionAvailable() && !hasShownUpdate && Minecraft.getMinecraft().currentScreen == null)
 		{
-			Minecraft.getMinecraft().thePlayer.addChatComponentMessage(new TextComponentString(ChatFormatting.GOLD + "Update Available for " + Reference.MOD_ID.substring(0, 1).toUpperCase() + Reference.MOD_ID.substring(1) + "!"));
+			Minecraft.getMinecraft().player.sendMessage(new TextComponentString(ChatFormatting.GOLD + "Update Available for " + Reference.MOD_ID.substring(0, 1).toUpperCase() + Reference.MOD_ID.substring(1) + "!"));
 			ClickEvent versionCheckChatClickEvent = new ClickEvent(ClickEvent.Action.OPEN_URL, Reference.UPDATE_URL);
-		    Minecraft.getMinecraft().thePlayer.addChatMessage(new TextComponentString("Download version " + ChatFormatting.DARK_AQUA + ModUpdate.getLatest() + ChatFormatting.RESET + " from " + ChatFormatting.BLUE + "here" + ChatFormatting.RESET + ".").setStyle(new Style().setClickEvent(versionCheckChatClickEvent)));
+		    Minecraft.getMinecraft().player.sendMessage(new TextComponentString("Download version " + ChatFormatting.DARK_AQUA + ModUpdate.getLatest() + ChatFormatting.RESET + " from " + ChatFormatting.BLUE + "here" + ChatFormatting.RESET + ".").setStyle(new Style().setClickEvent(versionCheckChatClickEvent)));
 			hasShownUpdate = true;
 		}
 	}
