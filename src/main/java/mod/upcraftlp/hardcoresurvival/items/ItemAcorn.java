@@ -21,7 +21,7 @@ public class ItemAcorn extends ItemFood implements IPlantable {
 	public ItemAcorn() {
 		super("acorn", 1, 0.7f, false);
 		this.setAlwaysEdible();
-		this.setPotionEffect(new PotionEffect(MobEffects.NAUSEA, 10, 2), 0.35f);
+		this.setPotionEffect(new PotionEffect(MobEffects.NAUSEA, 20 * 5, 2), 0.35f);
 	}
 	
 	@Override
