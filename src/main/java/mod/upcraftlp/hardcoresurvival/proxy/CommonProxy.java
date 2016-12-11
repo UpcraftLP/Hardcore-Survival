@@ -3,8 +3,6 @@ package mod.upcraftlp.hardcoresurvival.proxy;
 import core.upcraftlp.craftdev.API.common.ModRegistry;
 import core.upcraftlp.craftdev.API.common.WorldHandler;
 import mod.upcraftlp.hardcoresurvival.events.FuelHandler;
-import mod.upcraftlp.hardcoresurvival.events.LeafEvents;
-import mod.upcraftlp.hardcoresurvival.events.WoodEvents;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreBlocks;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreCrafting;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreItems;
@@ -24,13 +22,11 @@ public class CommonProxy {
 		HardcoreItems.init();
 		ModRegistry.registerItems(HardcoreItems.itemMap);
 		ModRegistry.registerBlocks(HardcoreBlocks.blockMap);
-		if(ModConfig.sand_pits) WorldHandler.registerChunkGenerator(new ChunkGenQuicksand(), 0);
+		if(ModConfig.enableQuicksand) WorldHandler.registerChunkGenerator(new ChunkGenQuicksand(), 0);
 	}
 	
 	public void init(FMLInitializationEvent event)
 	{
-		LeafEvents.init();
-		WoodEvents.init();
 		HardcoreCrafting.init();
 		HardcoreCrafting.registerOres();
 		GameRegistry.registerFuelHandler(new FuelHandler());

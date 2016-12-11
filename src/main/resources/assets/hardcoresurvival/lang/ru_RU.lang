@@ -1,11 +1,11 @@
-item.flint_axe.name=Кремневый Топор
-item.flint_pickaxe.name=Кремневая Кирка
-item.flint_hoe.name=Кремневая Мотыга
-item.flint_shovel.name=Кремневая Лопата
-item.flint_sword.name=Кремневый Меч
-item.branch.name=Ветвь
-item.acorn.name=Желудь
-item.pine_cone.name=Сосновая Шишка
-item.pine_cone.cooked.name=Жареная Шишка
+item.flint_axe.name=ÐšÑ€ÐµÐ¼Ð½ÐµÐ²Ñ‹Ð¹ Ð¢Ð¾Ð¿Ð¾Ñ€
+item.flint_pickaxe.name=ÐšÑ€ÐµÐ¼Ð½ÐµÐ²Ð°Ñ� ÐšÐ¸Ñ€ÐºÐ°
+item.flint_hoe.name=ÐšÑ€ÐµÐ¼Ð½ÐµÐ²Ð°Ñ� ÐœÐ¾Ñ‚Ñ‹Ð³Ð°
+item.flint_shovel.name=ÐšÑ€ÐµÐ¼Ð½ÐµÐ²Ð°Ñ� Ð›Ð¾Ð¿Ð°Ñ‚Ð°
+item.flint_sword.name=ÐšÑ€ÐµÐ¼Ð½ÐµÐ²Ñ‹Ð¹ ÐœÐµÑ‡
+item.branch.name=Ð’ÐµÑ‚Ð²ÑŒ
+item.acorn.name=Ð–ÐµÐ»ÑƒÐ´ÑŒ
+item.pine_cone.name=Ð¡Ð¾Ñ�Ð½Ð¾Ð²Ð°Ñ� Ð¨Ð¸ÑˆÐºÐ°
+item.cooked_pine_cone.name=Ð–Ð°Ñ€ÐµÐ½Ð°Ñ� Ð¨Ð¸ÑˆÐºÐ°
 
-tile.quicksand.name=Зыбучий Песок
+tile.quicksand.name=Ð—Ñ‹Ð±ÑƒÑ‡Ð¸Ð¹ ÐŸÐµÑ�Ð¾Ðº

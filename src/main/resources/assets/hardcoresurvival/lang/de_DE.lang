@@ -6,6 +6,6 @@ item.flint_sword.name=Feuersteinschwert
 item.branch.name=Ast
 item.acorn.name=Eichel
 item.pine_cone.name=Pinienzapfen
-item.pine_cone.cooked.name=gekochter Pinienzapfen
+item.cooked_pine_cone.name=gerösteter Pinienzapfen
 
 tile.quicksand.name=Treibsand

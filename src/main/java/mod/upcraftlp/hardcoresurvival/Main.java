@@ -10,13 +10,13 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(name = Reference.MODNAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.MCVERSIONS, modid = Reference.MOD_ID, canBeDeactivated = false, updateJSON = Reference.UPDATE_URL)
+@Mod(name = Reference.MODNAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.MCVERSIONS, modid = Reference.MODID, canBeDeactivated = false, updateJSON = Reference.UPDATE_JSON, dependencies = Reference.DEPENDENCIES, guiFactory = Reference.GUI_FACTORY)
 public class Main {
 
 	@Instance
 	public static Main instance;
 	
-	private static ModLogger log = new ModLogger(Reference.MOD_ID);
+	private static ModLogger log = new ModLogger(Reference.MODID);
 	
 	public static ModLogger getLogger() {
 		return log;

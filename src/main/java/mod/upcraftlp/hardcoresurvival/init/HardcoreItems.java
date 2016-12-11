@@ -10,6 +10,7 @@ import mod.upcraftlp.hardcoresurvival.items.ItemFlintPickaxe;
 import mod.upcraftlp.hardcoresurvival.items.ItemFlintShovel;
 import mod.upcraftlp.hardcoresurvival.items.ItemFlintSword;
 import mod.upcraftlp.hardcoresurvival.items.ItemPineCone;
+import mod.upcraftlp.hardcoresurvival.items.ItemPineConeCooked;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
@@ -25,6 +26,7 @@ public class HardcoreItems {
 	public static Item BRANCH = new Item().setUnlocalizedName("branch").setRegistryName("branch");
 	public static Item ACORN = new ItemAcorn();
 	public static Item PINE_CONE = new ItemPineCone();
+	public static Item PINE_CONE_COOKED = new ItemPineConeCooked();
 	
 	
 	public static void init()
@@ -36,6 +38,7 @@ public class HardcoreItems {
 		itemMap.put(FLINT_SWORD, CreativeTabs.COMBAT);
 		itemMap.put(ACORN, CreativeTabs.FOOD);
 		itemMap.put(PINE_CONE, CreativeTabs.FOOD);
+		itemMap.put(PINE_CONE_COOKED, CreativeTabs.FOOD);
 		itemMap.put(BRANCH, CreativeTabs.MATERIALS);
 	}
 	

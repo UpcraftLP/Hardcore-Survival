@@ -1,44 +1,15 @@
 package mod.upcraftlp.hardcoresurvival.items;
 
-import java.util.List;
-
 import core.upcraftlp.craftdev.API.templates.ItemFood;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
+import net.minecraft.init.MobEffects;
+import net.minecraft.potion.PotionEffect;
 
 public class ItemPineCone extends ItemFood {
 
 	public ItemPineCone() {
-		super("pine_cone", 3, 0.3f, false);
-		this.setHasSubtypes(true);
+		super("pine_cone", 1, 0.1f, false);
 		this.setMaxDamage(0);
+		this.setPotionEffect(new PotionEffect(MobEffects.HUNGER, 60 * 10), 0.5f);
 	}
-	
-	@Override
-	public String getUnlocalizedName(ItemStack stack) {
-		String name = super.getUnlocalizedName();
-		if(stack.getItemDamage() == 1) name = String.join(".", name, "cooked");
-		return name;
-	}
-	
-	@Override
-	public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
-		return !oldStack.isItemEqual(newStack);
-	}
-	
-	@Override
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-		if(stack.getMetadata() == 1) tooltip.add("Tasty!");
-	}
-	
-	@Override
-	public void getSubItems(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> subItems) {
-		subItems.add(new ItemStack(this, 1, 0));
-		subItems.add(new ItemStack(this, 1, 1));
-	}
-	
 	
 }

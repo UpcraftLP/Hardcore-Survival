@@ -6,9 +6,9 @@ import java.util.Random;
 
 import core.upcraftlp.craftdev.API.world.IWorldChunkGenerator;
 import core.upcraftlp.craftdev.API.world.WorldHelper;
-import core.upcraftlp.craftdev.common.CoreInternalConfig;
 import mod.upcraftlp.hardcoresurvival.Main;
 import mod.upcraftlp.hardcoresurvival.init.HardcoreBlocks;
+import mod.upcraftlp.hardcoresurvival.init.ModConfig;
 import net.minecraft.block.Block;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
@@ -54,7 +54,7 @@ public class ChunkGenQuicksand implements IWorldChunkGenerator {
 		public boolean generate(World world, Random rand, BlockPos pos) {
 			int y = WorldHelper.getGroundFromAbove(world, pos.getX(), pos.getZ(), sandSoil);
 			if(y >= pos.getY() && rand.nextInt(100) == 0) {
-				if(CoreInternalConfig.isDebugMode) Main.getLogger().println("generating Quicksand at:" + pos.getX() + ", " + y + ", " + pos.getZ());
+				if(ModConfig.isDebugMode()) Main.getLogger().println("generating Quicksand at:" + pos.getX() + ", " + y + ", " + pos.getZ());
 				int xOffset = pos.getX();
 				int zOffset = pos.getZ();
 				for(int height = y - (1 + rand.nextInt(2)); height <= y; height++) {

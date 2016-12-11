@@ -26,7 +26,7 @@ public class ClientProxy extends CommonProxy {
 		data.authorList = Arrays.asList(Reference.authors);
 		data.credits = Reference.CREDITS;
 		data.description = Reference.MOD_DESCRIPTION;
-		data.modId = Reference.MOD_ID;
+		data.modId = Reference.MODID;
 		data.name = TextFormatting.AQUA + Reference.MODNAME;
 		data.updateJSON = Reference.UPDATE_JSON;
 		data.url = Reference.MOD_URL;
