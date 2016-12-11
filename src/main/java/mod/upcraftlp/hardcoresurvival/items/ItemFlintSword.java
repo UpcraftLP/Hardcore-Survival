@@ -3,7 +3,6 @@ package mod.upcraftlp.hardcoresurvival.items;
 import java.util.List;
 
 import core.upcraftlp.craftdev.API.templates.ItemSword;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
@@ -11,8 +10,6 @@ public class ItemFlintSword extends ItemSword {
 
 	public ItemFlintSword() {
 		super("flint_sword", ToolMaterial.WOOD);
-		this.setFull3D();
-		this.setCreativeTab(CreativeTabs.COMBAT);
 		this.setHarvestLevel("sword", 0);
 	}
 	

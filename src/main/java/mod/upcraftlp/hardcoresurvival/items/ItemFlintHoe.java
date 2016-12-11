@@ -5,7 +5,6 @@ import java.util.Set;
 
 import com.google.common.collect.Sets;
 
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
@@ -17,10 +16,9 @@ public class ItemFlintHoe extends ItemHoe {
 	
 	public ItemFlintHoe() {
 		super(ToolMaterial.WOOD);
-		this.setFull3D();
 		this.setUnlocalizedName("flint_hoe");
 		this.setRegistryName("flint_hoe");
-		this.setCreativeTab(CreativeTabs.TOOLS);
+		this.setHarvestLevel("hoe", 0);
 	}
 	
 	@Override

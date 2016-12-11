@@ -5,7 +5,6 @@ import java.util.List;
 import core.upcraftlp.craftdev.API.templates.ItemTool;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
@@ -13,7 +12,6 @@ public class ItemFlintAxe extends ItemTool {
 
 	public ItemFlintAxe() {
 		super("flint_axe", 6.0f, -3.2f, ToolMaterial.WOOD);
-		this.setCreativeTab(CreativeTabs.TOOLS);
 		this.setHarvestLevel("axe", 0);
 	}
 	

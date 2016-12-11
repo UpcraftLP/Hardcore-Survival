@@ -3,7 +3,6 @@ package mod.upcraftlp.hardcoresurvival.items;
 import java.util.List;
 
 import core.upcraftlp.craftdev.API.templates.ItemTool;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
@@ -11,7 +10,6 @@ public class ItemFlintShovel extends ItemTool {
 
 	public ItemFlintShovel() {
 		super("flint_shovel", 1.5f, -3.0f, ToolMaterial.WOOD);
-		this.setCreativeTab(CreativeTabs.TOOLS);
 		this.setHarvestLevel("shovel", 0);
 	}
 	
