@@ -3,7 +3,7 @@ package mod.upcraftlp.hardcoresurvival;
 public class Reference {
 
 	public static final String MCVERSIONS = "1.11";
-	public static final String VERSION = "2.0.0";
+	public static final String VERSION = "2.0.1";
 	public static final String MODNAME = "Harcore Survival Mod";
 	public static final String MODID = "hardcoresurvival";
 	public static final String UPDATE_URL = "http://mods.curse.com/mc-mods/minecraft/247029-hardcore-survival-mod";

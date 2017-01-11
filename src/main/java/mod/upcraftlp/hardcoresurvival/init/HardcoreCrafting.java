@@ -39,7 +39,7 @@ public class HardcoreCrafting {
 		
 		if(ModConfig.extraDrops)
 		{
-			GameRegistry.addSmelting(new ItemStack(HardcoreItems.PINE_CONE,  1, 0), new ItemStack(HardcoreItems.PINE_CONE, 1, 1), 0.2f);
+			GameRegistry.addSmelting(new ItemStack(HardcoreItems.PINE_CONE), new ItemStack(HardcoreItems.PINE_CONE_COOKED), 0.2f);
 		}
 		
 		if(ModConfig.enableQuicksand)
