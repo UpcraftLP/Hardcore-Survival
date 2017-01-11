@@ -18,7 +18,7 @@ public class WoodEvents {
 		if(event.getState().getMaterial() != Material.WOOD) return;
 		if(event.getHarvester().getHeldItemMainhand() == null)
 		{
-			event.setCanceled(true);;
+			event.getDrops().clear();
 			return;
 		}
 		
@@ -29,14 +29,8 @@ public class WoodEvents {
 			{
 				return;
 			}
-			else
-			{
-				event.getDrops().clear();
-				event.setCanceled(true);
-			}
 		}
 		event.getDrops().clear();
-		event.setCanceled(true);
 	}
 	
 	@SubscribeEvent
